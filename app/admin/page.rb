@@ -13,5 +13,25 @@ permit_params do
   permitted
 end
 
+form html: { multipart: true } do |f|
+  f.semantic_errors # shows errors on :base
+    f.inputs "Gallery Details" do
+      f.input :title
+      f.input :body, :as => :ckeditor, input_html: { ckeditor: { height: 400 } }
+      f.input :side_body, :as => :ckeditor
+      f.input :menu_title
+      f.input :show_in_menu
+      f.input :view_template
+      f.input :layout_template
+
+      f.input :position
+    end
+
+
+
+
+
+  f.actions         # adds the 'Submit' and 'Cancel' buttons
+end
 
 end

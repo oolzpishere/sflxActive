@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'pages#index'
+  get 'about', to: 'pages#show', as: 'about', id: 1
   
   resources :pages
   mount Ckeditor::Engine => '/ckeditor'
