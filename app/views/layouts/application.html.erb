@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div id="page_container">
+      <header id="header">
+        <%= render "/header" %>
+      </header>
+      <section id="page">
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render "/footer" %>
+      </footer>
+    </div>
   </body>
 </html>

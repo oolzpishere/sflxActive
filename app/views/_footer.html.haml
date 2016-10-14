@@ -1,0 +1,14 @@
+.footer.row
+  .footer-content.col.l8.offset-l2.s12
+    .footer-content-item.footer-logo-wrap.col.m4.s12.vto-center
+      = link_to(image_tag("m/favicon.png"), root_path)
+
+    .footer-content-item.social-icon-wrap.col.m4.s12.vto-center
+      - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
+      = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img"), "", id: "wechat-icon", class: "social-icon", data: {:tooltip => "#{wechat_qr}"})
+      = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
+      = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
+      
+    .footer-content-item.footer-copyright-wrap.col.m4.s12.vto-center
+      %p.footer-copyright
+        = "版权所有 © 2016 sflx"

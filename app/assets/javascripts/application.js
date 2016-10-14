@@ -13,8 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require materialize-sprockets
+//= require materialize/extras/nouislider
+//= require jquery.slick
+//= require slideout.min
 
 //= require m
+
 //= require_tree .
 
 
