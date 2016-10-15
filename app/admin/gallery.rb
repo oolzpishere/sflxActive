@@ -19,6 +19,7 @@ form html: { multipart: true } do |f|
       f.input :title
       f.input :body, :as => :ckeditor, input_html: { ckeditor: { height: 400 } }
       f.input :side_body
+      f.input :gallery_types, :as => :check_boxes
       
       f.has_many :images, sortable: :position, allow_destroy: true, heading: 'images'  do |i|
         i.input :image, :as => :file, :hint => i.object.image.present? ? image_tag(i.object.image.url(:thumb)) : content_tag(:span, "no image yet")
@@ -43,7 +44,7 @@ form html: { multipart: true } do |f|
 end
 
 permit_params do
-  permitted = [:title, :body, :side_body, :position, images_attributes: [:id, :position, :gallery_id, :_destroy, :image , image: [] ]]
+  permitted = [:title, :body, :side_body, :position, :gallery_type_ids => [], images_attributes: [:id, :position, :gallery_id, :_destroy, :image , image: [] ]]
   permitted
 end
 
