@@ -21,10 +21,7 @@
         <td><%= gallery.body %></td>
         <td><%= gallery.side_body %></td>
         <td><%= gallery.position %></td>
-        <td><%= gallery.photos %></td>
-        <td><%= link_to 'Show', gallery %></td>
-        <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= gallery.images %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Gallery', new_gallery_path %>
+

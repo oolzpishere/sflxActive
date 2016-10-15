@@ -4,12 +4,10 @@ class PagesController < InheritedResources::Base
   def show
     @page
     if params[:path] == "contact"
-      render "contact"
+      render "contact" and return
     end
   end
 
-  # def contact
-  # end
 
   private
 
