@@ -7,4 +7,7 @@ $(document).on('turbolinks:load', function() {
     if ( $('#ckeditor').prev('label').length ) 
 	$('#ckeditor').prev('label').css('float','none');
 
+    //p initial wave after change page
+    Waves.displayEffect();
+
 })
