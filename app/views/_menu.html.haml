@@ -6,7 +6,7 @@
 -#     = link_to "Contact", "contact", class: "waves-effect waves-light"
 
 %ul.right.hide-on-med-and-down
-  - @pages.each do |page|
+  - @mypages.each do |page|
     - path = generate_path page
     %li= link_to page.title, path, class: "waves-effect waves-light"
   /- byebug
