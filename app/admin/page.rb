@@ -13,6 +13,18 @@ ActiveAdmin.register Page do
     permitted
   end
 
+  index do
+    selectable_column
+    id_column
+    column :title
+    column :position
+    column :parent_id
+    column :slug
+    column :link_url
+    column :created_at
+    actions
+  end
+
   form html: { multipart: true } do |f|
     f.semantic_errors # shows errors on :base
     f.inputs "Gallery Details" do

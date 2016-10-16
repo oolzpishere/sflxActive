@@ -12,6 +12,13 @@ $(document).on('turbolinks:load', function() {
     // $(window).on("resize", function() {
     // });
 
+    $('.dropdown-button').dropdown({
+	constrain_width: true, // Does not change width of dropdown to that of the activator
+	hover: true, // Activate on hover
+	gutter: 0, // Spacing from edge
+	belowOrigin: true // Displays dropdown below the button
+    });
+
     if ( $('#ckeditor').length ) 
 	CKEDITOR.replace( 'ckeditor' );
     if ( $('#ckeditor').prev('label').length ) 

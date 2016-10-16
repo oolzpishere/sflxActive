@@ -11,6 +11,7 @@
       - path = generate_path page
       %li= link_to page.title, path, class: "waves-effect waves-light"
     - else
+      
 
   /- byebug
 
