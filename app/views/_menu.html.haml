@@ -1,12 +1,23 @@
-.right
-  %ul.right.hide-on-med-and-down
-    %li
-      = link_to "Home", root_path, class: "waves-effect waves-light"
-      = link_to "About", "about", class: "waves-effect waves-light"
-      = link_to "Gallery", galleries_path, class: "waves-effect waves-light"
-      = link_to "Contact", "contact", class: "waves-effect waves-light"
+-# %ul.right.hide-on-med-and-down
+-#   %li
+-#     = link_to "Home", root_path, class: "waves-effect waves-light"
+-#     = link_to "About", "about", class: "waves-effect waves-light"
+-#     = link_to "Gallery", galleries_path, class: "waves-effect waves-light"
+-#     = link_to "Contact", "contact", class: "waves-effect waves-light"
+
+%ul.right.hide-on-med-and-down
+  - @pages.each do |page|
+    - path = generate_path page
+    %li= link_to page.title, path, class: "waves-effect waves-light"
+  /- byebug
 
 
 
+%ul#slide-out.side-nav
+  %li
+    = link_to "Home", root_path, class: "waves-effect waves-light"
+    = link_to "About", "about", class: "waves-effect waves-light"
+    = link_to "Gallery", galleries_path, class: "waves-effect waves-light"
+    = link_to "Contact", "contact", class: "waves-effect waves-light"
 
 

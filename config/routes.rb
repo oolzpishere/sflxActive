@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 #  get 'contact', to: 'pages#contact'
-  get '/pages/:id', to: 'pages#show'
+  get '/pages/:id', to: 'pages#show', as: 'page'
   
 
   # resources :pages
