@@ -7,20 +7,22 @@ ActiveAdmin.register Page do
 #
 # or
 
-permit_params do
-  permitted = [ :parent_id, :path, :slug, :custom_slug, :show_in_menu, :link_url, :menu_match, :deletable, :draft, :skip_to_first_child, :lft, :rgt, :position, :depth, :view_template, :layout_template, :title, :menu_title, :body, :side_body, :show_in_footer, :locale ]
-  # permitted << :other if params[:action] == 'create' && current_user.admin?
-  permitted
-end
+  permit_params do
+    permitted = [ :parent_id, :path, :slug, :custom_slug, :show_in_menu, :link_url, :menu_match, :deletable, :draft, :skip_to_first_child, :lft, :rgt, :position, :depth, :view_template, :layout_template, :title, :menu_title, :body, :side_body, :show_in_footer, :locale ]
+    # permitted << :other if params[:action] == 'create' && current_user.admin?
+    permitted
+  end
 
-form html: { multipart: true } do |f|
-  f.semantic_errors # shows errors on :base
+  form html: { multipart: true } do |f|
+    f.semantic_errors # shows errors on :base
     f.inputs "Gallery Details" do
       f.input :title
       f.input :body, :as => :ckeditor, input_html: { ckeditor: { height: 400 } }
       f.input :side_body, :as => :ckeditor
       f.input :menu_title
       f.input :show_in_menu
+      f.input :slug
+      f.input :link_url
       f.input :view_template
       f.input :layout_template
 
@@ -31,7 +33,7 @@ form html: { multipart: true } do |f|
 
 
 
-  f.actions         # adds the 'Submit' and 'Cancel' buttons
-end
+    f.actions         # adds the 'Submit' and 'Cancel' buttons
+  end
 
 end
