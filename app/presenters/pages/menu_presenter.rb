@@ -77,20 +77,27 @@ module Pages
     end
 
     def check_for_dropdown_item(menu_item)
-      menu_item.link_url == "/galleries" if menu_item.link_url.present?
+      path = get_path menu_item 
+      path == "galleries" or path =="contact"
     end
 
     def render_menu_item_link(menu_item)
-      if menu_item.slug.present?
-        path = menu_item.slug
-      elsif menu_item.link_url.present?
-        path = menu_item.link_url
+      if menu_item.link_url == "/"
+        link_to(menu_item.title, context.url_for(controller: 'pages', action: 'index',only_path: true), :class => link_tag_css)
+      else
+        if menu_item.slug.present?
+          path = menu_item.slug
+        elsif menu_item.link_url.present?
+          path = menu_item.link_url
+        end
+        link_to(menu_item.title, context.url_for(controller: 'pages', action: 'show',only_path: true, path: ["#{path}"]), :class => link_tag_css)
       end
-      link_to(menu_item.title, path, :class => link_tag_css)
     end
 
     def render_menu_item_link_dropdown(menu_item)
-      link_to(menu_item.link_url, :class => link_dropdown_tag_css, data: {activates:"dropdown1"} ) do
+      dropdownid = "dropdown#{menu_item.id}"
+      path = get_path menu_item
+      link_to(context.url_for(controller: 'pages', action: 'show',only_path: true, path: "#{path}"), :class => link_dropdown_tag_css, data: {activates: dropdownid} ) do
         str = "#{menu_item.title}<i class=\"fa fa-chevron-down right\" aria-hidden=\"true\"></i>"
         str.html_safe
       end
@@ -108,14 +115,24 @@ module Pages
     end
 
     def menu_item_children(menu_item)
-      if menu_item.link_url == "/galleries" 
-        @collection.select { |item| item.parent_id.present? }
+      path = get_path menu_item 
+      if path == "galleries" or path =="contact"
+        @collection.select { |item| item.parent_id == menu_item.id }
+      end
+    end
+
+    def get_path(menu_item)
+      if menu_item.slug.present?
+        path = menu_item.slug
+      elsif menu_item.link_url.present?
+        path = menu_item.link_url
       end
     end
 
     def render_menu_items_children(menu_items)
       if menu_items.present?
-        content_tag(list_tag, :id =>"dropdown1", :class => 'dropdown-content') do
+        dropdownid = "dropdown#{menu_items.first.parent_id}"
+        content_tag(list_tag, :id => dropdownid, :class => 'dropdown-content') do
           menu_items.each_with_index.inject(ActiveSupport::SafeBuffer.new) do |buffer, (item, index)|
             buffer << render_menu_item(item, index)
           end

@@ -35,10 +35,10 @@ ActiveAdmin.register Page do
       f.input :show_in_menu
       f.input :slug
       f.input :link_url
+      f.input :position
+      f.input :parent_id
       f.input :view_template
       f.input :layout_template
-
-      f.input :position
     end
 
 

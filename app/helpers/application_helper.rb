@@ -7,4 +7,12 @@ module ApplicationHelper
     presenter
   end
 
+  def slideout_menu
+    menu_items = Page.all.order(:position)
+    
+    presenter = Pages::SlideoutMenuPresenter.new( menu_items, self)
+    presenter
+  end
+
+
 end
