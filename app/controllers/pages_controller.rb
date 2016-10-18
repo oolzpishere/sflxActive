@@ -15,8 +15,6 @@ class PagesController < InheritedResources::Base
 
   private
 
-
-
   def find_by_path_or_id
     path = params[:path]
     id = params[:id]
@@ -36,8 +34,8 @@ class PagesController < InheritedResources::Base
     page
   end
 
-    def page_params
-      params.require(:page).permit()
-    end
+  def page_params
+    params.require(:page).permit()
+  end
 end
 

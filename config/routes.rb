@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 #  get 'contact', to: 'pages#contact'
   get '/pages/:id', to: 'pages#show', as: 'page'
+  get '/gallery_types/:id', to: 'gallery_types#show', as: 'gallery_type'
   
 
   # resources :pages

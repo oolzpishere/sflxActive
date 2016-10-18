@@ -1,0 +1,33 @@
+.row
+  %section.col.l8.offset-l1.m9
+    - @galleries_filter.each do |gallery| 
+      .col.l4.s6
+        .project-cover
+          .cover-img
+            = link_to (image_tag gallery.cover.url(:crop), class: 'responsive-img'), gallery_path(gallery)
+          / raise "ooo"
+          .project-title
+            = link_to gallery_path(gallery) do
+              %strong= gallery.title
+
+          .project-taxonomy
+            - gallery.gallery_types.each_with_index do |type, i|
+              = link_to type.name, galleries_path(:gallery_type => type.name)
+              = ", " unless gallery.gallery_types.length == i + 1
+
+            /= type_array.join(", ").to_s
+            / array.join(", ")
+            / "," if type.last
+            /=raise "oooo"
+
+
+  %aside.col.l2.m3.s12
+    /%h2= t('.other')
+    .card
+      %ul.menu.nav
+        - @gallery_types.each do |type|
+          %li
+            = link_to type.name, galleries_path(:gallery_type => type.name) 
+
+
+
