@@ -19,6 +19,12 @@ $(document).on('turbolinks:load', function() {
 	belowOrigin: true // Displays dropdown below the button
     });
 
+    //p index slick
+    $('.index-slider-wrap').slick({
+	dots: true,
+	speed: 500
+    });
+
     if ( $('#ckeditor').length ) 
 	CKEDITOR.replace( 'ckeditor' );
     if ( $('#ckeditor').prev('label').length ) 
@@ -26,5 +32,11 @@ $(document).on('turbolinks:load', function() {
 
     //p initial wave after change page
     Waves.displayEffect();
+
+    $('#wechat-icon').tooltip({
+	delay: 50,
+	position: 'top',
+	html: true
+    });
 
 })
