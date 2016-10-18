@@ -7,7 +7,7 @@
             = @gallery.title
         .project-taxonomy
           - @gallery.gallery_types.each_with_index do |type, i|
-            = link_to(type.name, refinery.galleries_gallery_type_path(type)) 
+            = link_to type.name, galleries_path(:gallery_type => type.name) 
             = ", " unless @gallery.gallery_types.length == i + 1
 
     .gallery-text
@@ -17,8 +17,8 @@
 
 
     %section
-      - @gallery.images.each do |image|
-        .gallery-content-image= image_fu image, nil, class: 'responsive-img'
+      - @gallery.images.each do |i|
+        .gallery-content-image= image_tag i.image.url, class: 'responsive-img'
 
   %aside.col.l2.m3.s12
     /%h2= t('.other')
@@ -27,15 +27,16 @@
         = content_tag(:span, @gallery.title, class: "card-title")
 
         %ul.menu.nav
-          - @gallery_types.each do |gallery_type|
+          - @gallery_types.each do |type|
             %li
-              = link_to gallery_type.name, refinery.galleries_gallery_type_path(gallery_type)
+              = link_to type.name, galleries_path(:gallery_type => type.name) 
 
       .card-action
         = content_tag(:span, "more", class: "card-title")
         %ul#galleries
-          - position = @gallery.position
-          - if @galleries[position..position+5].length != 0
-            - @galleries[position..position+5].each do |gallery| 
-              %li
-                = link_to gallery.title, refinery.galleries_gallery_path(gallery)
+          - if @gallery.position.present?
+            - position = @gallery.position
+            - if @galleries[position..position+5].length != 0
+              - @galleries[position..position+5].each do |gallery| 
+                %li
+                  = link_to gallery.title, refinery.galleries_gallery_path(gallery)

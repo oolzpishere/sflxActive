@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'active_support/core_ext/string'
 require 'active_support/configurable'
 require 'action_view/helpers/tag_helper'
@@ -90,8 +91,17 @@ module Pages
         elsif menu_item.link_url.present?
           path = menu_item.link_url
         end
-        link_to(menu_item.title, context.url_for(controller: 'pages', action: 'show',only_path: true, path: ["#{path}"]), :class => link_tag_css)
+        if menu_item_of_gallery_type? menu_item
+          path = path.slice(/\w+/)
+          link_to(menu_item.title, context.url_for(controller: 'pages', action: 'show',only_path: true, path: ["#{path}"], gallery_type: menu_item.title ), :class => link_tag_css)
+        else
+          link_to(menu_item.title, context.url_for(controller: 'pages', action: 'show',only_path: true, path: ["#{path}"] ), :class => link_tag_css)
+        end
       end
+    end
+
+    def menu_item_of_gallery_type?(menu_item)
+      menu_item.parent_id == 3 if menu_item.parent_id.present?
     end
 
     def render_menu_item_link_dropdown(menu_item)
