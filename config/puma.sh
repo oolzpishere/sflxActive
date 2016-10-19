@@ -9,7 +9,7 @@ set -x
 # The script will start with config set by $PUMA_CONFIG_FILE by default
 
 ROOT=/var/www/rails/sflxActive
-PUMA_CONFIG_FILE="$ROOT"/config/puma.rb
+PUMA_CONFIG_FILE="$ROOT"/config/puma_production.rb
 PUMA_PID_FILE="$ROOT"/tmp/pids/puma.pid
 PUMA_SOCKET="$ROOT"/tmp/sockets/puma.sock
 USER=lilee

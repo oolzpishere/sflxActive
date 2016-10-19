@@ -12,6 +12,9 @@ $(document).on('turbolinks:load', function() {
     // $(window).on("resize", function() {
     // });
 
+    // slideout menu item collapsible
+    $('.collapsible').collapsible();
+
     $('.dropdown-button').dropdown({
 	constrain_width: true, // Does not change width of dropdown to that of the activator
 	hover: true, // Activate on hover

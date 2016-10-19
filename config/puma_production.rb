@@ -13,7 +13,7 @@ port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
-environment ENV.fetch("RAILS_ENV") { "development" }
+environment ENV.fetch("RAILS_ENV") { "production" }
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
@@ -45,3 +45,22 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+daemonize true
+basedir = '/var/www/rails/sflxActive'
+
+# Store the pid of the server in the file at "path".
+#
+pidfile "#{basedir}/tmp/pids/puma.pid"
+
+# Bind the server to "url". "tcp://", "unix://" and "ssl://" are the only
+# accepted protocols.
+#
+# The default is "tcp://0.0.0.0:9292".
+#
+# bind 'tcp://0.0.0.0:9292'
+# bind 'unix:///var/run/puma.sock'
+bind "unix://#{basedir}/tmp/puma.sock?umask=0111"
+# bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
+
+

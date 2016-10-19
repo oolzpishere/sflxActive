@@ -16,11 +16,9 @@ class PagesController < InheritedResources::Base
   private
 
   def find_by_path_or_id
-    path = params[:path]
-    id = params[:id]
-    if path
-      @page ||= Page.where({slug: params[:path]}).first
-    elsif id
+    if params[:path].present?
+      @page ||= Page.where({slug: "/#{params[:path]}"}).first
+    elsif params[:id].present?
       @page ||= Page.where({id: params[:id]}).first
     end
     

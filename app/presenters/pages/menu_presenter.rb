@@ -79,7 +79,7 @@ module Pages
 
     def check_for_dropdown_item(menu_item)
       path = get_path menu_item 
-      path == "galleries" or path =="contact"
+      path == "/galleries" or path =="/contact"
     end
 
     def render_menu_item_link(menu_item)
@@ -92,10 +92,9 @@ module Pages
           path = menu_item.link_url
         end
         if menu_item_of_gallery_type? menu_item
-          path = path.slice(/\w+/)
-          link_to(menu_item.title, context.url_for(controller: 'pages', action: 'show',only_path: true, path: ["#{path}"], gallery_type: menu_item.title ), :class => link_tag_css)
+          link_to(menu_item.title, context.url_for(controller: 'galleries', action: 'index', gallery_type: menu_item.title ), :class => link_tag_css)
         else
-          link_to(menu_item.title, context.url_for(controller: 'pages', action: 'show',only_path: true, path: ["#{path}"] ), :class => link_tag_css)
+          link_to(menu_item.title, context.url_for(path), :class => link_tag_css)
         end
       end
     end
@@ -107,7 +106,8 @@ module Pages
     def render_menu_item_link_dropdown(menu_item)
       dropdownid = "dropdown#{menu_item.id}"
       path = get_path menu_item
-      link_to(context.url_for(controller: 'pages', action: 'show',only_path: true, path: "#{path}"), :class => link_dropdown_tag_css, data: {activates: dropdownid} ) do
+      
+      link_to( context.url_for( path ), :class => link_dropdown_tag_css, data: {activates: dropdownid} ) do
         str = "#{menu_item.title}<i class=\"fa fa-chevron-down right\" aria-hidden=\"true\"></i>"
         str.html_safe
       end
@@ -126,7 +126,7 @@ module Pages
 
     def menu_item_children(menu_item)
       path = get_path menu_item 
-      if path == "galleries" or path =="contact"
+      if path == "/galleries" or path =="/contact"
         @collection.select { |item| item.parent_id == menu_item.id }
       end
     end
