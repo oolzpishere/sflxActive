@@ -1,0 +1,512 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2016-10-10 14:22:44.857476'
+    - '2016-10-10 14:22:44.857476'
+
+---
+admin_users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - oolzpishere@aliyun.com
+    - "$2a$11$VTqzUQbHZE7qEnG9XDm/3u6Xr/IHVATccRCasKokvNbtXVxM5Sr/."
+    - 
+    - 
+    - '2016-10-10 14:27:35.647047'
+    - 12
+    - '2016-10-18 15:43:55.325178'
+    - '2016-10-17 02:26:11.256845'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2016-10-10 14:25:17.994005'
+    - '2016-10-18 15:43:55.326369'
+
+---
+galleries:
+  columns:
+  - id
+  - title
+  - body
+  - side_body
+  - position
+  - created_at
+  - updated_at
+  - cover_file_name
+  - cover_content_type
+  - cover_file_size
+  - cover_updated_at
+  records: 
+  - - 1
+    - gallery1
+    - ''
+    - ''
+    - 
+    - '2016-10-11 05:31:17.871650'
+    - '2016-10-18 07:44:09.440706'
+    - BangkokNightMarket_ZH-CN11275629598_1920x1080.jpg
+    - image/jpeg
+    - 347915
+    - '2016-10-18 07:44:09.010215'
+
+---
+images:
+  columns:
+  - id
+  - gallery_id
+  - position
+  - image_file_name
+  - image_content_type
+  - image_file_size
+  - image_updated_at
+  - created_at
+  - updated_at
+  records: 
+  - - 7
+    - 1
+    - 1
+    - AzureWindow_ZH-CN8863680074_1920x1080.jpg
+    - image/jpeg
+    - 350574
+    - '2016-10-11 14:13:27.609089'
+    - '2016-10-11 12:59:05.782315'
+    - '2016-10-14 02:49:36.923629'
+  - - 9
+    - 1
+    - 0
+    - 921418_1209770132367718_2407748026973896221_o.jpg
+    - image/jpeg
+    - 345918
+    - '2016-10-13 16:00:32.653491'
+    - '2016-10-13 16:00:33.483168'
+    - '2016-10-14 02:49:36.920379'
+
+---
+ckeditor_assets:
+  columns:
+  - id
+  - data_file_name
+  - data_content_type
+  - data_file_size
+  - data_fingerprint
+  - assetable_id
+  - assetable_type
+  - type
+  - width
+  - height
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - azurewindow_zh-cn8863680074_1920x1080.jpg
+    - image/jpeg
+    - 350574
+    - ba9e55fe42ddcd8dbd488731c3f5c1e6
+    - 1
+    - AdminUser
+    - Ckeditor::Picture
+    - 1920
+    - 1080
+    - '2016-10-12 14:22:56.854097'
+    - '2016-10-12 14:22:56.854097'
+  - - 2
+    - ayersrock_zh-cn10361596489_1920x1080.jpg
+    - image/jpeg
+    - 337369
+    - 25b6d919101663f9e8fefd868c25e331
+    - 1
+    - AdminUser
+    - Ckeditor::Picture
+    - 1920
+    - 1080
+    - '2016-10-12 14:24:07.051663'
+    - '2016-10-12 14:24:07.051663'
+  - - 3
+    - bernesealps_zh-cn9347506837_1920x1080.jpg
+    - image/jpeg
+    - 312279
+    - 8e2bbb17e9eee5ee93aebe7eb38423c4
+    - 1
+    - AdminUser
+    - Ckeditor::Picture
+    - 1920
+    - 1080
+    - '2016-10-12 15:31:26.580532'
+    - '2016-10-12 15:31:26.580532'
+  - - 4
+    - gaztelugatxe_zh-cn11078922437_1920x1080.jpg
+    - image/jpeg
+    - 357460
+    - f8383c49f61a93ef28189f26d747e12e
+    - 1
+    - AdminUser
+    - Ckeditor::Picture
+    - 1920
+    - 1080
+    - '2016-10-12 15:33:40.437288'
+    - '2016-10-12 15:33:40.437288'
+
+---
+pages:
+  columns:
+  - id
+  - parent_id
+  - path
+  - slug
+  - custom_slug
+  - show_in_menu
+  - link_url
+  - menu_match
+  - deletable
+  - draft
+  - skip_to_first_child
+  - lft
+  - rgt
+  - position
+  - depth
+  - view_template
+  - layout_template
+  - title
+  - menu_title
+  - body
+  - side_body
+  - show_in_footer
+  - locale
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 
+    - ''
+    - about
+    - ''
+    - true
+    - ''
+    - ''
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 2
+    - 
+    - ''
+    - ''
+    - US[我们]
+    - ''
+    - "<p>广西南宁四方连续文化传播有限公司<br />\r\n四方连续 / 简介<br />\r\n广西南宁四方连续文化传播有限公司（简称：四方连续创享品牌
+      / The continuous），专注品牌形象量身定制，是一家注重实效的新锐设计公司，以品牌设计为核心业务，为各阶段企业提供务实的形象策划服务。<br
+      />\r\n四方连续核心服务：品牌形象建立与升级：品牌策划 \\ 标志设计 \\ VIS设计 \\ 商业空间设计； 推广物料设计：画册样本设计 \\ 展会形象设计
+      \\ 包装设计 \\ 网站设计；广告设计代理：专业地产整合推广以及品牌形象年度设计管理。<br />\r\n四方连续是一个积极向上的年轻团队，我们怀着一颗进取、责任、感恩的心，致力服务于重视形象价值的客户，提供相互尊重与信任的设计服务，我们不只为了盈利，更怀揣着创想未来的梦想！<br
+      />\r\n热忱期待与更多潜力型企业客户共同成长、携手同行。</p>\r\n"
+    - ''
+    - false
+    - ''
+    - '2016-10-14 10:13:20.820030'
+    - '2016-10-14 11:29:32.872335'
+  - - 2
+    - 
+    - 
+    - contact
+    - 
+    - true
+    - 
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 4
+    - 
+    - ''
+    - ''
+    - contact
+    - ''
+    - "<p>contact</p>\r\n"
+    - ''
+    - false
+    - 
+    - '2016-10-15 05:26:50.172753'
+    - '2016-10-15 05:26:50.172753'
+  - - 3
+    - 
+    - 
+    - 
+    - 
+    - true
+    - galleries
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 3
+    - 
+    - ''
+    - ''
+    - Galleries
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-16 04:06:00.905859'
+    - '2016-10-16 04:06:00.905859'
+  - - 4
+    - 3
+    - 
+    - ''
+    - 
+    - true
+    - galleries/gallery_type
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 30
+    - 
+    - ''
+    - ''
+    - VI设计
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-16 08:02:18.340141'
+    - '2016-10-18 12:24:10.805008'
+  - - 5
+    - 3
+    - 
+    - ''
+    - 
+    - true
+    - galleries/gallery_type
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 31
+    - 
+    - ''
+    - ''
+    - 包装设计
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-16 08:03:40.944780'
+    - '2016-10-18 12:41:00.061752'
+  - - 6
+    - 
+    - 
+    - ''
+    - 
+    - true
+    - "/"
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 1
+    - 
+    - ''
+    - ''
+    - Home
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-16 08:10:02.711517'
+    - '2016-10-16 08:10:02.711517'
+  - - 7
+    - 2
+    - 
+    - contact/find_us
+    - 
+    - true
+    - ''
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 20
+    - 
+    - ''
+    - ''
+    - Find us
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-17 02:27:04.763605'
+    - '2016-10-17 02:29:18.566201'
+  - - 8
+    - 3
+    - 
+    - ''
+    - 
+    - true
+    - galleries/gallery_type
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 32
+    - 
+    - ''
+    - ''
+    - 标志设计
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-18 12:41:56.615906'
+    - '2016-10-18 12:42:11.858794'
+  - - 9
+    - 3
+    - 
+    - ''
+    - 
+    - true
+    - galleries/gallery_type
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 33
+    - 
+    - ''
+    - ''
+    - 画册设计
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-18 12:44:25.155517'
+    - '2016-10-18 12:44:25.155517'
+  - - 10
+    - 3
+    - 
+    - ''
+    - 
+    - true
+    - galleries/gallery_type
+    - 
+    - true
+    - false
+    - false
+    - 
+    - 
+    - 34
+    - 
+    - ''
+    - ''
+    - 网装设计
+    - ''
+    - ''
+    - ''
+    - false
+    - 
+    - '2016-10-18 12:45:07.716060'
+    - '2016-10-18 12:45:38.836665'
+
+---
+gallery_types:
+  columns:
+  - id
+  - name
+  - position
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - VI设计
+    - 
+    - '2016-10-15 16:10:08.611799'
+    - '2016-10-15 16:10:08.611799'
+  - - 2
+    - 包装设计
+    - 
+    - '2016-10-15 16:10:32.000932'
+    - '2016-10-15 16:10:32.000932'
+  - - 3
+    - 标志设计
+    - 
+    - '2016-10-15 16:10:57.595683'
+    - '2016-10-15 16:10:57.595683'
+  - - 4
+    - 画册设计
+    - 
+    - '2016-10-15 16:11:08.122840'
+    - '2016-10-15 16:11:08.122840'
+  - - 5
+    - 网装设计
+    - 
+    - '2016-10-15 16:11:19.223289'
+    - '2016-10-15 16:11:19.223289'
+
+---
+gallery_join_gallery_types:
+  columns:
+  - id
+  - gallery_id
+  - gallery_type_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - 1
+    - '2016-10-15 16:19:24.207364'
+    - '2016-10-15 16:19:24.207364'
+  - - 2
+    - 1
+    - 2
+    - '2016-10-15 16:22:06.833099'
+    - '2016-10-15 16:22:06.833099'
+  - - 3
+    - 1
+    - 3
+    - '2016-10-15 16:22:06.837681'
+    - '2016-10-15 16:22:06.837681'
