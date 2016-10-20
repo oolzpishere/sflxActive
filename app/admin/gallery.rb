@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ActiveAdmin.register Gallery do
 
 # See permitted parameters documentation:
@@ -11,7 +12,19 @@ ActiveAdmin.register Gallery do
 #   permitted = [:permitted, :attributes]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
-# end
+  # end
+
+  index do
+    selectable_column
+    id_column
+    column :title
+    column "正文" do |gallery|
+      gallery.body.truncate(100)
+    end
+    column :position
+    column :created_at
+    actions
+  end
 
 form html: { multipart: true } do |f|
   f.semantic_errors # shows errors on :base

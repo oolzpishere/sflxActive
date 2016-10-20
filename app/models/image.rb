@@ -3,4 +3,6 @@ class Image < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   has_one :gallery, :foreign_key => "gallery_id"
+
+  validates :image, presence: true
 end
