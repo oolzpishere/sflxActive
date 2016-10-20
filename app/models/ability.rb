@@ -3,6 +3,8 @@ class Ability
 
   def initialize(user)
     user ||= AdminUser.new # guest user (not logged in)
+    alias_action :create, :read, :update, :destroy, :to => :crud
+
     if user.admin?
       can :manage, :all
     else
