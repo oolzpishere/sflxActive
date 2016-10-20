@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def access_denied(exception)
+    redirect_to admin_dashboard_path, alert: exception.message
+  end
+
   private
 
   def find_all_pages
