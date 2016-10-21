@@ -3,13 +3,19 @@
     .index-slider
       %h3 All Articles
       .index-slider-image
-        = image_tag "m/i1.jpg", :class => "responsive-img"
+        %picture
+          %source{ :media => "(max-width:768px)", :srcset => "#{asset_path('m/i1-1200-crop.jpg')}"}
+          %source{ :media => "(min-width:768px)", :srcset => "#{asset_path('m/i1.jpg')}"}
+          = image_tag "m/i1-1200-crop.jpg", :class => "responsive-img"
         / %img{src: "assets/m/i1.jpg"}
 
     .index-slider
       %h3 All Articles
       .index-slider-image
-        = image_tag "m/i4.jpg", :class => "responsive-img"
+        %picture
+          %source{ :media => "(max-width:768px)", :srcset => "#{asset_path('m/i4-1200-crop.jpg')}"}
+          %source{ :media => "(min-width:768px)", :srcset => "#{asset_path('m/i4.jpg')}"}
+          = image_tag "m/i4-1200-crop.jpg", :class => "responsive-img"
 
 
 =render '/content_page'

@@ -4,44 +4,47 @@ $(document).on('turbolinks:load', function() {
 
     // Initialize collapse button
     $('.button-collapse').sideNav({
-	menuWidth: 200, // Default is 240
-	edge: 'left', // Choose the horizontal origin
-	closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+	      menuWidth: 200, // Default is 240
+	      edge: 'left', // Choose the horizontal origin
+	      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     });
 
-    // $(window).on("resize", function() {
-    // });
+    
 
     // slideout menu item collapsible
     $('.collapsible').collapsible();
 
     $('.dropdown-button').dropdown({
-	constrain_width: true, // Does not change width of dropdown to that of the activator
-	hover: true, // Activate on hover
-	gutter: 0, // Spacing from edge
-	belowOrigin: true // Displays dropdown below the button
+	      constrain_width: true, // Does not change width of dropdown to that of the activator
+	      hover: true, // Activate on hover
+	      gutter: 0, // Spacing from edge
+	      belowOrigin: true // Displays dropdown below the button
     });
 
     //p index slick
     $('.index-slider-wrap').slick({
-	dots: true,
-	speed: 500
+	      dots: true,
+	      speed: 500
     });
 
     if ( $('#ckeditor').length ) 
-	CKEDITOR.replace( 'ckeditor' );
+	      CKEDITOR.replace( 'ckeditor' );
     if ( $('#ckeditor').prev('label').length ) 
-	$('#ckeditor').prev('label').css('float','none');
+	      $('#ckeditor').prev('label').css('float','none');
 
     //p initial wave after change page
     Waves.displayEffect();
 
     $('#wechat-icon').tooltip({
-	delay: 50,
-	position: 'top',
-	html: true
+	      delay: 50,
+	      position: 'top',
+	      html: true
     });
 
-    $('.index-slider-image').children('.responsive-img').attr({ src: "<%= asset_path('m/i4-crop.jpg') %>" })
+		// window resize
+		// $(window).on("resize", function() {
+		//     WW = $(window).width();
 
-})
+		// });
+
+});
