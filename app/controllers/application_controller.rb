@@ -38,6 +38,7 @@ class ApplicationController < ActionController::Base
 
   def set_admin_locale
     I18n.locale = 'zh-CN'
+    # I18n.locale = current_admin_user && current_admin_user.locale || I18n.default_locale
   end
 
   def find_all_pages

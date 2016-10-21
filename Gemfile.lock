@@ -300,6 +300,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   jquery-slick-rails (~> 1.6, >= 1.6.0.2)
+  jquery-ui-rails
   listen (~> 3.0.5)
   materialize-sass (~> 0.97.7)
   paperclip (~> 5.1)

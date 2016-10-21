@@ -73,3 +73,5 @@ gem 'materialize-sass', '~> 0.97.7'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 
 gem 'rails-i18n'
+## for translate activeadmin datepicker I18n
+gem 'jquery-ui-rails'
