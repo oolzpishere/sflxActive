@@ -18,7 +18,7 @@
 
     %section
       - @gallery.images.each do |i|
-        .gallery-content-image= image_tag i.image.url, class: 'responsive-img'
+        .gallery-content-image= image_tag i.image.url(:thumb), srcset: "#{i.image.url(:w768)} 768w, #{i.image.url} 2000w",class: 'responsive-img'
 
   %aside.col.l2.m3.s12
     /%h2= t('.other')
