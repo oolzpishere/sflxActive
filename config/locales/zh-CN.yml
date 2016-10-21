@@ -110,10 +110,3 @@
         sign_in_with_omniauth_provider: "登入%{provider}"
     access_denied:
       message: "您无权处理此操作"
-  time:
-    formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      short: "%d %b %H:%M"
-      long: "%Y-%m-%d %H:%M:%S"
-    am: "am"
-    pm: "pm"

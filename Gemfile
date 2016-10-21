@@ -71,3 +71,5 @@ gem 'ckeditor'
 gem 'jquery-slick-rails', '~> 1.6', '>= 1.6.0.2'
 gem 'materialize-sass', '~> 0.97.7'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+
+gem 'rails-i18n'
