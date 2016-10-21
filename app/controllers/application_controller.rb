@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
+  # before_action :set_locale
+
   before_action :find_all_pages
   helper_method :generate_path
 
@@ -24,12 +26,19 @@ class ApplicationController < ActionController::Base
   # end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, :account_update) do |user_params|
+    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+      user_params.permit(:email, :password, :password_confirmation, :admin, :user, :group)
+    end
+    devise_parameter_sanitizer.permit(:account_update) do |user_params|
       user_params.permit(:email, :password, :password_confirmation, :admin, :user, :group)
     end
   end
 
   private
+
+  def set_admin_locale
+    I18n.locale = 'zh-CN'
+  end
 
   def find_all_pages
     @mypages = Page.all

@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
+gem 'devise-i18n'
 gem 'cancan' # or cancancan
 gem 'draper', git: 'https://github.com/drapergem/draper.git'
 gem 'pundit'
