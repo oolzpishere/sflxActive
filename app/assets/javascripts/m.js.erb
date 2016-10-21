@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
 
     // Initialize collapse button
     $('.button-collapse').sideNav({
-	menuWidth: 240, // Default is 240
+	menuWidth: 200, // Default is 240
 	edge: 'left', // Choose the horizontal origin
 	closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     });
@@ -41,5 +41,7 @@ $(document).on('turbolinks:load', function() {
 	position: 'top',
 	html: true
     });
+
+    $('.index-slider-image').children('.responsive-img').attr({ src: "<%= asset_path('m/i4-crop.jpg') %>" })
 
 })
