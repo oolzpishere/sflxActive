@@ -30,4 +30,6 @@
             = link_to type.name, galleries_path(:gallery_type => type.name) 
 
 
-
+= form_tag galleries_path, role: 'search', method: :get do |f|
+  = text_field_tag :q, params[:q]
+  = button_tag "Search", name: nil

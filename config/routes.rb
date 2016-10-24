@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/searches', to: 'searches#index'
+
   root to: 'pages#index'
 #  get 'contact', to: 'pages#contact'
   get '/pages/:id', to: 'pages#show', as: 'page'

@@ -1,0 +1,8 @@
+.card.search-form
+  = form_tag searches_path, method: 'get' do
+    .input-field.col.s12
+      = text_field_tag :query, {}, {type: "text", class: "validate search-text", value: (params[:query] if params[:query])}
+      = label_tag 'query', '搜索'
+      %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"}
+        %i.fa.fa-search{"aria-hidden" => "true"}
+          = submit_tag "go", class: "hide"

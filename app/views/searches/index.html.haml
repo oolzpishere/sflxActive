@@ -1,0 +1,9 @@
+%h3 Search result
+
+- @searches.records.each do |s|
+  
+  %p= link_to s.title, generate_path(s)
+  = sanitize s.body.truncate(60, separator: ' ', omission: '... (more)') if s.body.present?
+  /= s.highlight.body
+
+

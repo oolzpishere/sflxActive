@@ -10,7 +10,8 @@
 
         %i.fa.fa-search.fa-lg.right.header-search-toggle{"aria-hidden" => "true"}
 
-        /= render "/menu"
         = slideout_menu.to_html
         = menu_header.to_html
+
+= render "/search" 
 

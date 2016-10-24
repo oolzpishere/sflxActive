@@ -5,6 +5,7 @@ class GalleriesController < InheritedResources::Base
 
   def index
     @galleries_filter
+    
   end
 
   def show

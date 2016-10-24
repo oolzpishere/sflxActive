@@ -7,10 +7,9 @@ class ApplicationController < ActionController::Base
   helper_method :generate_path
 
   def generate_path(page)
-    #byebug
-    if page.slug.present?
+    if page.respond_to?(:slug) && page.slug.present?
       page.slug
-    elsif page.link_url.present?
+    elsif page.respond_to?(:link_url) && page.link_url.present?
       page.link_url
     end
   end

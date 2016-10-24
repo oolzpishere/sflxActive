@@ -41,10 +41,28 @@ $(document).on('turbolinks:load', function() {
 	      html: true
     });
 
+    // p search button prevent bubble: event.stopPropagation();
+    $('html').on("click", function() {
+	if ($('.search-form').is(":visible")) {
+	    $('.search-form').hide();
+	}
+    });
+
+    $('.header-search-toggle').on("click", function(event){
+	event.stopPropagation();
+	$('.search-form').stop(true,true).toggle(300);
+    });
+
+    $('.search-form').on("click", function(event){
+	event.stopPropagation();
+    });
+//----------------------------------------
+
 		// window resize
 		// $(window).on("resize", function() {
 		//     WW = $(window).width();
 
 		// });
+
 
 });

@@ -1,0 +1,14 @@
+class SearchesController < ApplicationController
+  def index
+    mquery = params[:query].present? ? params[:query] : '*'
+    @searches = Elasticsearch::Model.search(
+      query: { 
+       bool: {
+        must: [
+              {match: { title: mquery}},
+              {match: { body: mquery}}]
+       }
+      },
+      highlight: { fields: { body: {} } })
+  end
+end

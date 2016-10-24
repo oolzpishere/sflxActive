@@ -1,0 +1,5 @@
+%h3 Search result
+
+- @searches.each do |s|
+  %p= s.title
+  /= s.highlight.body
