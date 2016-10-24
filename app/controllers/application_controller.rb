@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
       page.slug
     elsif page.respond_to?(:link_url) && page.link_url.present?
       page.link_url
+    else
+      controller = page.model_name.name.pluralize.downcase
+      url_for controller: controller, action: 'show', id: page.id
     end
   end
 
