@@ -2,7 +2,7 @@
 
 - @searches.records.each do |search|
   /-byebug
-  %p= link_to search.title, generate_path(search)
+  %p= link_to search.title, render_menu_item_link(search)
   = sanitize search.body.truncate(60, separator: ' ', omission: '... (more)') if search.body.present?
   /= s.highlight.body
 

@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     # else
     #   url_for controller: page.model_name.plural, action: 'show', id: page.id
     # end
-    ApplicationHelper.render_menu_item_link menu_item 
+    #ApplicationHelper.render_menu_item_link menu_item 
   end
 
   def access_denied(exception)

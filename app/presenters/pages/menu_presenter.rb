@@ -79,35 +79,28 @@ module Pages
 
     def check_for_dropdown_item(menu_item)
       path = get_path menu_item 
-      path == "/galleries" or path =="/contact"
+      path =~ /^\/?galleries$|^\/?contact$/
     end
 
     def render_menu_item_link(menu_item)
-      if menu_item.link_url == "/"
-        link_to(menu_item.title, context.url_for(controller: 'pages', action: 'index',only_path: true), :class => link_tag_css)
+      path = get_path menu_item
+      if path =~ /galleries/
+        mcontroller = path.slice(/^\/?\w+/) # get 'galleries'
+        link_to(menu_item.title, context.url_for(controller: mcontroller, action: 'index', query: menu_item.title ), :class => link_tag_css)
+      elsif path =~ /^\/$/
+        link_to(menu_item.title, context.url_for(controller: 'pages', action: 'index'), :class => link_tag_css)
+      elsif menu_item.model_name.plural =~ /galleries/
+        url_for controller: menu_item.model_name.plural, action: 'show', id: menu_item.id
       else
-        if menu_item.slug.present?
-          path = menu_item.slug
-        elsif menu_item.link_url.present?
-          path = menu_item.link_url
-        end
-        if menu_item_of_gallery_type? menu_item
-          link_to(menu_item.title, context.url_for(controller: 'galleries', action: 'index', gallery_type: menu_item.title ), :class => link_tag_css)
-        else
-          link_to(menu_item.title, context.url_for(path), :class => link_tag_css)
-        end
+        link_to(menu_item.title, context.url_for(path), :class => link_tag_css)
       end
-    end
-
-    def menu_item_of_gallery_type?(menu_item)
-      menu_item.parent_id == 3 if menu_item.parent_id.present?
     end
 
     def render_menu_item_link_dropdown(menu_item)
       dropdownid = "dropdown#{menu_item.id}"
       path = get_path menu_item
       
-      link_to( context.url_for( path ), :class => link_dropdown_tag_css, data: {activates: dropdownid} ) do
+      link_to( context.url_for(path), :class => link_dropdown_tag_css, data: {activates: dropdownid} ) do
         str = "#{menu_item.title}<i class=\"fa fa-chevron-down right\" aria-hidden=\"true\"></i>"
         str.html_safe
       end
@@ -126,7 +119,7 @@ module Pages
 
     def menu_item_children(menu_item)
       path = get_path menu_item 
-      if path == "/galleries" or path =="/contact"
+      if path =~ /^\/?galleries$|^\/?contact$/
         @collection.select { |item| item.parent_id == menu_item.id }
       end
     end

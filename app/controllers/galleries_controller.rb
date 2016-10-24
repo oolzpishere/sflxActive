@@ -1,10 +1,10 @@
 class GalleriesController < InheritedResources::Base
   before_action :find_all_galleries
   before_action :find_all_gallery_types
-  before_action :galleries_filter
+#  before_action :galleries_filter
 
   def index
-    @galleries_filter
+    @galleries
     
   end
 
@@ -15,23 +15,13 @@ class GalleriesController < InheritedResources::Base
   private
 
   def find_all_galleries
-    @galleries = Gallery.order('position ASC')
+    query = params[:query].present? ? params[:query] : '*'
+    @galleries = Elasticsearch::Model.search( query, [Gallery] ).records 
+
+    
   end
 
-  def galleries_filter
-    @galleries_filter ||= Array.new
-    if params[:gallery_type].present?
-      @galleries.each do |g|
-        g.gallery_types.each do |type|
-          if type.name == params[:gallery_type]
-            @galleries_filter << g
-          end
-        end
-      end
-    else
-      @galleries_filter = @galleries
-    end
-  end
+
 
   def find_all_gallery_types
     @gallery_types = GalleryType.order('position ASC')
