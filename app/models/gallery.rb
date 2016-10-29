@@ -11,6 +11,7 @@ class Gallery < ApplicationRecord
   validates :title, presence: true
   validates :cover, presence: true
 
+  # elasticsearch =======================================
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
@@ -25,6 +26,9 @@ class Gallery < ApplicationRecord
       "title" => title,
       "body" => body
     }
-  end 
+  end
+  # elasticsearch =======================================
+
+  
 
 end
