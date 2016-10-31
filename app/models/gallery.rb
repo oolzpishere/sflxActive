@@ -27,7 +27,7 @@ class Gallery < ApplicationRecord
       "body" => body
     }
   end
-  # elasticsearch =======================================
+  # ======================================================
 
   
 

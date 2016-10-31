@@ -38,7 +38,7 @@ ActiveAdmin.register Gallery do
       
       #f.has_many :images, sortable: :position, allow_destroy: true, heading: 'images'  do |i|
       f.has_many :images, sortable: :position, allow_destroy: true, heading: 'images'  do |i|
-        i.input :image, :as => :file,input_html: { multiple: true}, :hint => i.object.image.present? ? image_tag(i.object.image.url(:thumb)) : content_tag(:span, "no image yet")
+        i.input :image, :as => :file, :hint => i.object.image.present? ? image_tag(i.object.image.url(:thumb)) : content_tag(:span, "no image yet")
       end
       #,input_html: { multiple: true}
       # f.input :image_cache, :as => :hidden 
