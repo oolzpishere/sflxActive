@@ -19,8 +19,18 @@ class GalleriesController < InheritedResources::Base
 
   def find_all_galleries
     query = params[:query].present? ? params[:query] : '*'
-    @galleries = Elasticsearch::Model.search( query, [Gallery] ).records 
-
+    #@galleries = Elasticsearch::Model.search( query, [Gallery] ).records
+    @galleries = Array.new
+    if params[:query]
+      Gallery.order('id DESC').each do |g|
+        g.gallery_types.each do |gt|
+          @galleries << g if gt.name == params[:query]
+        end
+      end
+    else
+      @galleries = Gallery.order('id DESC')
+    end
+        
     
   end
 

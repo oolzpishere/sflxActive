@@ -1,3 +1,4 @@
+# coding: utf-8
 class SearchesController < ApplicationController
   def index
     mquery = params[:query].present? ? params[:query] : '*'
@@ -11,3 +12,13 @@ class SearchesController < ApplicationController
       #highlight: { fields: { body: {} } })
   end
 end
+
+
+Elasticsearch::Model.search(
+  query: {
+    nested: {
+      path: 'gallery_types',
+      query: {
+        match: {
+          name: "标志设计"}}}})
+      

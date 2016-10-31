@@ -22,10 +22,9 @@ class Gallery < ApplicationRecord
   end
 
   def as_indexed_json(options={})
-    {
-      "title" => title,
-      "body" => body
-    }
+    self.as_json(
+      include: { gallery_types: { }
+               })
   end
   # ======================================================
 
