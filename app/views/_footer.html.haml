@@ -1,14 +1,47 @@
-.footer.row
-  .footer-content.col.l8.offset-l2.s12
-    .footer-content-item.footer-logo-wrap.col.m4.s12.vto-center
-      = link_to(image_tag("m/favicon.png"), root_path)
+-# .footer.row
+-#   .footer-content.col.l8.offset-l2.s12
+-#     .footer-content-item.footer-logo-wrap.col.m4.s12.vto-center
+-#       = link_to(image_tag("m/favicon.png"), root_path)
 
-    .footer-content-item.social-icon-wrap.col.m4.s12.vto-center
-      - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
-      = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img"), "", id: "wechat-icon", class: "social-icon", data: {:tooltip => "#{wechat_qr}"})
-      = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
-      = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
+-#     .footer-content-item.social-icon-wrap.col.m4.s12.vto-center
+-#       - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
+-#       = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img"), "", id: "wechat-icon", class: "social-icon", data: {:tooltip => "#{wechat_qr}"})
+-#       = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
+-#       = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
       
-    .footer-content-item.footer-copyright-wrap.col.m4.s12.vto-center
-      %p.footer-copyright
-        = "版权所有 © 2016 sflx"
+-#     .footer-content-item.footer-copyright-wrap.col.m4.s12.vto-center
+-#       %p.footer-copyright
+-#         = "版权所有 © 2016 sflx"
+
+
+
+
+
+%footer.page-footer
+  .container
+    .row
+      .col.l4.s12
+        %h5.white-text Footer Content
+        %p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
+        
+      .col.l4.s12.footer-content-item.social-icon-wrap.vto-center
+        - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
+        = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img"), "", id: "wechat-icon", class: "social-icon", data: {:tooltip => "#{wechat_qr}"})
+        = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
+        = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
+        
+      .col.l4.s12
+        %h5.white-text Links
+        %ul
+          %li
+            %a.grey-text.text-lighten-3{:href => "#!"} Link 1
+          %li
+            %a.grey-text.text-lighten-3{:href => "#!"} Link 2
+          %li
+            %a.grey-text.text-lighten-3{:href => "#!"} Link 3
+          %li
+            %a.grey-text.text-lighten-3{:href => "#!"} Link 4
+  .footer-copyright
+    .container
+      版权所有 © 2016 sflx
+      %a.grey-text.text-lighten-4.right{:href => "#!"} More Links

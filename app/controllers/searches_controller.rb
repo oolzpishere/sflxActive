@@ -14,11 +14,4 @@ class SearchesController < ApplicationController
 end
 
 
-Elasticsearch::Model.search(
-  query: {
-    nested: {
-      path: 'gallery_types',
-      query: {
-        match: {
-          name: "标志设计"}}}})
-      
+

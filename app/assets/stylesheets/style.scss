@@ -64,7 +64,9 @@ i{
 
 }
 
-
+.container{
+    max-width: 1440px;
+}
 
 //L Index content
 $slick-arrow-color: #000 !default;
@@ -281,7 +283,11 @@ $slick-arrow-color: #000 !default;
 @media (min-width: 992px) {  }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 992px) {  }
+@media (min-width: 992px) {
+    .container{
+        width: 80%;
+    }
+}
 
 // @media (max-width: $screen-xs-max) {  }
 // @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {  }
