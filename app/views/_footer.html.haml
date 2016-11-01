@@ -21,14 +21,16 @@
   .container
     .row
       .col.l4.s12
-        %h5.white-text Footer Content
-        %p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
+        %h5.white-text 关于我们
+        %p.grey-text.text-lighten-4 广西南宁四方连续文化传播有限公司（简称：四方连续创享品牌 / The continuous），专注品牌形象量身定制，是一家注重实效的新锐设计公司，以品牌设计为核心业务，为各阶段企业提供务实的形象策划服务。
         
-      .col.l4.s12.footer-content-item.social-icon-wrap.vto-center
-        - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
-        = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img"), "", id: "wechat-icon", class: "social-icon", data: {:tooltip => "#{wechat_qr}"})
-        = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
-        = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
+      .col.l4.s12
+        %h5.white-text 联系我们
+        .footer-content-item.social-icon-wrap.footer-logo-wrap
+          - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
+          = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img"), "", id: "wechat-icon", class: "social-icon", data: {:tooltip => "#{wechat_qr}"})
+          = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
+          = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
         
       .col.l4.s12
         %h5.white-text Links

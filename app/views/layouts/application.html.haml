@@ -10,6 +10,8 @@
     #page_container
       %header#header= render "/header"
 
-      %section#page= yield
+      %section#page
+        .container
+          = yield
 
       %footer= render "/footer"
