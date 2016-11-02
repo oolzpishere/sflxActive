@@ -54,4 +54,4 @@ CKEDITOR.editorConfig = function (config) {
   ];
 
   // ... rest of the original config.js  ...
-}
+};

@@ -1,4 +1,3 @@
-%p
-  contact haml
 %h3.header= sanitize @page.title
 %p= sanitize @page.body
+test

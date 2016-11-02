@@ -13,6 +13,7 @@ class GalleriesController < InheritedResources::Base
   def show
     @gallery
     @images
+
   end
 
   private

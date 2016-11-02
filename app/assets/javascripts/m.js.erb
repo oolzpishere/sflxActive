@@ -20,17 +20,31 @@ $(document).on('turbolinks:load', function() {
 	      gutter: 0, // Spacing from edge
 	      belowOrigin: true // Displays dropdown below the button
     });
-
+    
+// slick============================================================
     //p index slick
     $('.index-slider-wrap').slick({
 	      dots: true,
 	      speed: 500
     });
 
-    if ( $('#ckeditor').length ) 
-	      CKEDITOR.replace( 'ckeditor' );
-    if ( $('#ckeditor').prev('label').length ) 
-	      $('#ckeditor').prev('label').css('float','none');
+    // page views slider syncing
+    $('.views-slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        asNavFor: '.views-slider-nav'
+    });
+    $('.views-slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.views-slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+    });
+//===============================================================
+
 
     //p initial wave after change page
     Waves.displayEffect();
@@ -74,5 +88,7 @@ $(document).on('turbolinks:load', function() {
     //         debugger;
     //     }
     // });
+
+
 
 });

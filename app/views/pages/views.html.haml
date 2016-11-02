@@ -1,0 +1,31 @@
+-# %h3.header= sanitize @page.title
+-# %p= sanitize @page.body
+
+
+.row
+  .col.l12
+    .views-slider-nav
+      .test
+        first
+      .test
+        second
+
+
+    .views-slider-for
+      .views-slider
+        %h4 公司主要特点
+        %h4 COMPANY'S MAIN CHARACTERISTICS
+      
+      
+        
+
+      .views-slider
+        .index-slider-image
+          %picture
+            %source{ :media => "(max-width:768px)", :srcset => "#{asset_path('m/i4-1200-crop.jpg')}"}
+            %source{ :media => "(min-width:768px)", :srcset => "#{asset_path('m/i4.jpg')}"}
+            = image_tag "m/i4-1200-crop.jpg", :class => "responsive-img"
+
+
+
+

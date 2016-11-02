@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :find_all_pages
   helper_method :generate_path
+  helper_method :page_wrap_class
 
   def generate_path(menu_item)
     # if page.respond_to?(:slug) && page.slug.present?
@@ -46,4 +47,16 @@ class ApplicationController < ActionController::Base
   def find_all_pages
     @mypages = Page.all
   end
+
+  def page_wrap_class
+    controller = params[:controller]
+    path = params[:path]
+    id = params[:id]
+    if path
+      "#{controller}-#{path}"
+    elsif id
+      "#{controller}-#{id}"
+    end
+  end
+  
 end

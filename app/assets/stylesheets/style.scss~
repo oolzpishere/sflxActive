@@ -134,47 +134,17 @@ $slick-arrow-color: #000 !default;
     margin-bottom: 10px;
 }
 
-// views
-.pages-views{
-    /* .page-container-bg{ */
-    /*     overflow: hidden; */
-    /*     position: relative; */
-    /* } */
-    /* overflow: hidden; */
-    /* position:relative; */
-    /* #header{ */
-    /*     position:relative; */
-    /* } */
-    /* footer.page-footer{ */
-    /*     position:relative; */
-    /*     z-index: 20; */
-    /* } */
+// pages views
+.pages-container-views{
+    #page::before{
+    content: "";
+    width: 1000px;
+    height: 1000px;
+    position:absolute;
+    border: asset_path('m/mdotted.png');
+    transform: rotate(45deg);
+    }
 }
-/* .pages-views:before{ */
-/*     content: ""; */
-/*     width: 1000px; */
-/*     height: 1000px; */
-/*     position:absolute; */
-/*     border: 2px dotted #ccc; */
-/*     //border-image: url(asset_path('m/mdotted.png')) 15 repeat; */
-/*     transform: rotate(45deg); */
-/* } */
-/* .views-dotted{ */
-/*     content: ""; */
-/*     width: 1000px; */
-/*     height: 1000px; */
-/*     position:absolute; */
-/*     border: 2px dotted #ccc; */
-/*     //border-image: url(asset_path('m/mdotted.png')) 15 repeat; */
-/*     transform: rotate(45deg); */
-/* } */
-/* .views-dotted:before{ */
-/*     @extend .views-dotted; */
-/*     transform: rotate(0deg); */
-/*     bottom:100px; */
-/*     left:100px; */
-/* } */
-
 
 
 //L page project detail
