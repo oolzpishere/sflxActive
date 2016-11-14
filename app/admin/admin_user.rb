@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation, :admin, :user, :group
+  permit_params :email, :password, :password_confirmation, :admin, :manager, :user, :group
 
   index do
     selectable_column
@@ -22,6 +22,7 @@ ActiveAdmin.register AdminUser do
       f.input :password
       f.input :password_confirmation
       f.input :admin, :as => :boolean
+      f.input :manager, :as => :boolean
       f.input :user, :as => :boolean
       f.input :group, :as => :boolean
     end

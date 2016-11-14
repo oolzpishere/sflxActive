@@ -29,20 +29,33 @@ $(document).on('turbolinks:load', function() {
     });
 
     // page views slider syncing
-    $('.views-slider-for').slick({
+    // var ViewsSliderArr = $('.views-slider'), ViewsSliderHeights = [];
+    // $.each(ViewsSliderArr, function(){
+    //     ViewsSliderHeights.push($(this).outerHeight());
+    // });
+    // console.log(ViewsSliderHeights);
+    // var ViewsSliderHeight = ViewsSliderHeights.sort()[ViewsSliderHeights.length - 1] + 30;
+    // console.log(ViewsSliderHeight);
+    // $('.views-slider').css('height',ViewsSliderHeight);
+    
+    $('.views-slider-wrap').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
-        asNavFor: '.views-slider-nav'
+        arrows: true,
+        adaptiveHeight: true
+        //asNavFor: '.views-slider-nav'
     });
-    $('.views-slider-nav').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: '.views-slider-for',
-        dots: true,
-        centerMode: true,
-        focusOnSelect: true
-    });
+    
+
+    
+    // $('.views-slider-nav').slick({
+    //     slidesToShow: 3,
+    //     slidesToScroll: 1,
+    //     asNavFor: '.views-slider-for',
+    //     dots: true,
+    //     centerMode: true,
+    //     focusOnSelect: true
+    // });
 //===============================================================
 
 

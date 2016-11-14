@@ -8,8 +8,8 @@ class PagesController < InheritedResources::Base
   def show
     @page
    
-    if params[:path] == "contact"
-      render "contact" and return
+    if params[:path] == "contact/find_us"
+      render "find_us" and return
     elsif params[:path] == "views"
       render "views" and return
     end

@@ -5,8 +5,14 @@ class Ability
     user ||= AdminUser.new # guest user (not logged in)
     alias_action :create, :read, :update, :destroy, :to => :crud
 
+   
     if user.admin?
       can :manage, :all
+    elsif user.manager? 
+      can :manage, Gallery
+      can :manage, GalleryType
+      can :manage, AdminUser, id: user.id
+      can :manage, ActiveAdmin::Page, name: "Dashboard"
     else
       can :manage, Gallery
       can :manage, GalleryType

@@ -90,6 +90,68 @@ $slick-arrow-color: #000 !default;
     font-size: 40px;
   }
 }
+// views
+.pages-views{
+    /* .page-container-bg{ */
+    /*     overflow: hidden; */
+    /*     position: relative; */
+    /* } */
+    /* overflow: hidden; */
+    /* position:relative; */
+    /* #header{ */
+    /*     position:relative; */
+    /* } */
+    .views-slider-wrap{
+        margin-bottom:0;
+        .views-slider{
+            height:700px;
+        }
+        .slick-arrow{
+            z-index: 1010;
+            width: 40px;
+            height: 40px;
+        }
+        .slick-prev{
+            left:20px;
+        }
+        .slick-next{
+            right:20px;
+        }
+        .slick-prev:before,
+        .slick-next:before{
+            color: rgba(255,255,255,0.7);
+            font-size: 40px;
+        }
+    }
+    #header #nav-header{
+        line-height:63px;
+    }
+    #page{
+        .row{
+            margin-bottom:0;
+        }
+        .views-slider-wrap{
+            .first{
+                background: linear-gradient(45deg, red, blue);
+        
+            }
+            .second{
+                background: linear-gradient(45deg, red, blue);
+            }
+            .third{
+                background: linear-gradient(45deg, red, blue);
+            }
+            .fourth{
+                background: linear-gradient(45deg, red, blue);
+            }
+        }
+    }
+    footer.page-footer{
+        //position:relative;
+        //z-index: 20;
+        margin-top:0;
+    }
+}
 
 //L page content
 .project-cover{
@@ -134,22 +196,7 @@ $slick-arrow-color: #000 !default;
     margin-bottom: 10px;
 }
 
-// views
-.pages-views{
-    /* .page-container-bg{ */
-    /*     overflow: hidden; */
-    /*     position: relative; */
-    /* } */
-    /* overflow: hidden; */
-    /* position:relative; */
-    /* #header{ */
-    /*     position:relative; */
-    /* } */
-    /* footer.page-footer{ */
-    /*     position:relative; */
-    /*     z-index: 20; */
-    /* } */
-}
+
 /* .pages-views:before{ */
 /*     content: ""; */
 /*     width: 1000px; */
@@ -224,6 +271,13 @@ $slick-arrow-color: #000 !default;
 //L sidebar second
 #sidebarSecondAffix{
   
+}
+
+// contact find us
+#map{
+    label{
+        color: #000;
+    }
 }
 
 //L footer
