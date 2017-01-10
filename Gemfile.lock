@@ -1,24 +1,4 @@
 GIT
-  remote: git://github.com/activeadmin/inherited_resources.git
-  revision: 4434f0ae72f790cf371728838c927c338100555d
-  specs:
-    inherited_resources (1.6.0)
-      actionpack (>= 3.2, < 5.1)
-      has_scope (~> 0.6)
-      railties (>= 3.2, < 5.1)
-      responders
-
-GIT
-  remote: git://github.com/rails/activemodel-serializers-xml.git
-  revision: 570ee7ed33d60e44ca1f3ccbec3d1fbf61d52cbf
-  specs:
-    activemodel-serializers-xml (1.0.1)
-      activemodel (> 5.x)
-      activerecord (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
-
-GIT
   remote: https://github.com/drapergem/draper.git
   revision: 45e18569d9631710f889d75d49f971fb60d5cbcd
   specs:
@@ -28,6 +8,26 @@ GIT
       activemodel-serializers-xml (~> 1.0)
       activesupport (~> 5.0)
       request_store (~> 1.0)
+
+GIT
+  remote: https://github.com/josevalim/inherited_resources.git
+  revision: 6707bf7e45b9a25e84c6c95a37d67b1dc28d211d
+  specs:
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5.1)
+      has_scope (~> 0.6)
+      railties (>= 3.2, < 5.1)
+      responders
+
+GIT
+  remote: https://github.com/rails/activemodel-serializers-xml.git
+  revision: 570ee7ed33d60e44ca1f3ccbec3d1fbf61d52cbf
+  specs:
+    activemodel-serializers-xml (1.0.1)
+      activemodel (> 5.x)
+      activerecord (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
 
 GEM
   remote: https://rubygems.org/

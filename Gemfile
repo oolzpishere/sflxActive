@@ -54,13 +54,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'activeadmin', '~> 1.0.0.pre4'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'inherited_resources', git: 'https://github.com/josevalim/inherited_resources.git'
 gem 'devise'
 gem 'devise-i18n'
 gem 'cancan' # or cancancan
 gem 'draper', git: 'https://github.com/drapergem/draper.git'
 gem 'pundit'
-gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml.git'
 
 gem 'haml'
 gem 'yaml_db'

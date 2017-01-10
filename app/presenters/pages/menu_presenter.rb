@@ -34,7 +34,7 @@ module Pages
     self.last_css = :last
     self.list_tag_css = 'right hide-on-med-and-down'
     self.link_tag_css = 'waves-effect waves-light'
-    self.link_dropdown_tag_css = 'dropdown-button waves-effect waves-light'
+    self.link_dropdown_tag_css = 'header-dropdown-button waves-effect waves-light'
  
 
     attr_accessor :context, :collection
@@ -87,12 +87,16 @@ module Pages
       if path =~ /galleries/
         mcontroller = path.slice(/^\/?\w+/) # get 'galleries'
         link_to(menu_item.title, context.url_for(controller: mcontroller, action: 'index', query: menu_item.title ), :class => link_tag_css)
-      elsif path =~ /^\/$/
+      elsif path =~ /^\/$/ # path = /, then render index
         link_to(menu_item.title, context.url_for(controller: 'pages', action: 'index'), :class => link_tag_css)
       elsif menu_item.model_name.plural =~ /galleries/
         url_for controller: menu_item.model_name.plural, action: 'show', id: menu_item.id
+      #elsif path =~ /find_us/
+        
       else
-        link_to(menu_item.title, context.url_for(path), :class => link_tag_css)
+        #p for page find_us to reload all page
+        turbolinks_boolean = path =~ /find_us/ ? false : true
+        link_to(menu_item.title, context.url_for(path), :class => link_tag_css,  "data-turbolinks" => turbolinks_boolean)
       end
     end
 

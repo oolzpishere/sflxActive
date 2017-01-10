@@ -8,11 +8,12 @@ set -x
 
 # The script will start with config set by $PUMA_CONFIG_FILE by default
 
+
 ROOT=/var/www/rails/sflxActive
 PUMA_CONFIG_FILE="$ROOT"/config/puma_production.rb
 PUMA_PID_FILE="$ROOT"/tmp/pids/puma.pid
 PUMA_SOCKET="$ROOT"/tmp/sockets/puma.sock
-USER=lilee
+USER=ubuntu
 
 
 # check if puma process is running
@@ -39,7 +40,7 @@ case "$1" in
     echo "Starting puma..."
     rm -f $PUMA_SOCKET
     if [ -e $PUMA_CONFIG_FILE ] ; then
-      su -c "cd "$ROOT" && bundle exec puma --config "$PUMA_CONFIG_FILE"" - "$USER";
+      su -c "source '/home/lili/.bashrc';cd "$ROOT" && bundle exec puma --config "$PUMA_CONFIG_FILE"" - "$USER";
     else
       bundle exec puma --daemon --bind unix://$PUMA_SOCKET --pidfile $PUMA_PID_FILE
     fi
