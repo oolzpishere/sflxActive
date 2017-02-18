@@ -2,7 +2,7 @@
   %section.col.l8.offset-l1.m9
     - @galleries.each do |gallery| 
       .col.l4.s6
-        .project-cover
+        .project-cover.hoverable
           .cover-img
             = link_to (image_tag gallery.cover.url(:crop), class: 'responsive-img'), gallery_path(gallery)
             .project-title
@@ -23,10 +23,8 @@
 
   %aside.col.l2.m3.s12
     /%h2= t('.other')
-    .card
-      %ul.menu.nav
-        - @gallery_types.each do |type|
-          %li
-            = link_to type.name, galleries_path(:query => type.name) 
+    .card.hoverable.sidebar
+      = Pages::GalleryTypesMenuPresenter.new( gallery_type_menus, self).to_html
+      /- byebug
 
 

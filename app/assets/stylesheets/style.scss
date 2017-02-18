@@ -33,9 +33,13 @@
   -webkit-align-items: center;
   -webkit-justify-content:center;
 }
+/* helper */
+.margin-top0{
+    margin-top:0 !important; 
+}
 body{
 
-	margin-top: 0;
+    margin-top: 0;
 }
 ul li, ol li {
     list-style: none;
@@ -44,23 +48,23 @@ ul li, ol li {
 }
 //L head
 i{
-  float: none !important;
-  display: inline-block !important;
+    float: none !important;
+    display: inline-block !important;
 }
 
 .search-form{
-  position: absolute;
-  top: 64px;
-  right: (100%/12) ;
-  overflow: hidden;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-  margin: 0;
-  display: none;
-  z-index: 100;
-  .search-text{
-    width: auto;
-  }
+    position: absolute;
+    top: 64px;
+    right: (100%/12) ;
+    overflow: hidden;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    margin: 0;
+    display: none;
+    z-index: 100;
+    .search-text{
+	width: auto;
+    }
 
 }
 
@@ -71,24 +75,24 @@ i{
 //L Index content
 $slick-arrow-color: #000 !default;
 .index-slider-wrap{
-  width: 100%;
-  float: left;
-  .slick-arrow{
-    z-index: 1010;
-    width: 40px;
-    height: 40px;
-  }
-  .slick-prev{
-    left:20px;
-  }
-  .slick-next{
-    right:20px;
-  }
-  .slick-prev:before,
-  .slick-next:before{
-    color: rgba(255,255,255,0.7);
-    font-size: 40px;
-  }
+    width: 100%;
+    float: left;
+    .slick-arrow{
+	z-index: 1010;
+	width: 40px;
+	height: 40px;
+    }
+    .slick-prev{
+	left:20px;
+    }
+    .slick-next{
+	right:20px;
+    }
+    .slick-prev:before,
+    .slick-next:before{
+	color: rgba(255,255,255,0.7);
+	font-size: 40px;
+    }
 }
 // about us
 .aboutus-row{
@@ -274,6 +278,11 @@ $slick-arrow-color: #000 !default;
     width: 100%;
 }
 
+/* sidebar */
+.sidebar{
+    background:black;
+}
+
 //L sidebar second
 #sidebarSecondAffix{
     
@@ -305,11 +314,11 @@ $slick-arrow-color: #000 !default;
 	    margin-left: 2px;
 	    margin-right: 2px;
 	    display: inline-block;
-	    img{
-		width: 50px;
-		height: 50px;
 
-	    }
+	}
+	.social-icon-img{
+	    width: 50px;
+	    height: 50px;
 	}
 	#wechat-icon{
 	}
@@ -335,7 +344,13 @@ $slick-arrow-color: #000 !default;
 /* No media query since this is the default in Bootstrap */
 
 /**L ExtraSmall devices (< 768px)*/
-@media (max-width: 600px) { 
+@media (max-width: 600px) {
+
+    //header search icon
+    .header-search-toggle, .button-collapse {
+	line-height: 56px;
+    }
+
     .project-cover{
 	margin-top: 5px;
 	margin-bottom: 5px;

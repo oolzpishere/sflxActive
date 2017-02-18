@@ -5,14 +5,14 @@
         .col.s12
           / Refinery::Core.site_name
           = link_to image_tag("m/favicon.png"), root_path, class: "brand-logo .vto-center"
-          = link_to "Menu", "#", class: "button-collapse", data:{activates: "slide-out"}
+          = link_to "", "#", class: "fa fa-bars fa-lg button-collapse", data:{activates: "slide-out"}
 
 
 
           %i.fa.fa-search.fa-lg.right.header-search-toggle{"aria-hidden" => "true"}
 
-          = slideout_menu.to_html
-          = menu_header.to_html
+          = Pages::SlideoutMenuPresenter.new( menu_items, self).to_html
+          = Pages::MenuPresenter.new( menu_items, self).to_html
 
 = render "/search" 
 

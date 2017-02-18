@@ -13,4 +13,10 @@ module GalleriesHelper
     image_tag(source, options.merge(srcset: srcset))
   end
 
+  private
+  
+  def gallery_type_menus
+    GalleryType.order('position ASC')
+  end
+
 end

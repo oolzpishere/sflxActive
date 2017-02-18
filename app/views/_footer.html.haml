@@ -17,7 +17,7 @@
 
 
 
-%footer.page-footer
+%footer.page-footer.margin-top0
   .container
     .row
       .col.l4.s12
@@ -28,22 +28,19 @@
         %h5.white-text 联系我们
         .footer-content-item.social-icon-wrap.footer-logo-wrap
           - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
-          = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img"), "", id: "wechat-icon", class: "social-icon", data: {:tooltip => "#{wechat_qr}"})
-          = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
-          = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
+          = image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img",  id: "wechat-icon", class: "social-icon social-icon-img ", data: {:tooltip => "#{wechat_qr}"})
+          = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img social-icon-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
+          = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img social-icon-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
         
       .col.l4.s12
-        %h5.white-text Links
+        %h5.white-text 快速链接
         %ul
           %li
-            %a.grey-text.text-lighten-3{:href => "#!"} Link 1
+            = link_to("US[我们]", "/about", class: "grey-text text-lighten-3")
           %li
-            %a.grey-text.text-lighten-3{:href => "#!"} Link 2
-          %li
-            %a.grey-text.text-lighten-3{:href => "#!"} Link 3
-          %li
-            %a.grey-text.text-lighten-3{:href => "#!"} Link 4
+            = link_to("Contact[联系]", "/contact", class: "grey-text text-lighten-3")
+
   .footer-copyright
     .container
       版权所有 © 2016 sflx
-      %a.grey-text.text-lighten-4.right{:href => "#!"} More Links
+      = link_to("US[我们]", "/about", class: "grey-text text-lighten-4 right")

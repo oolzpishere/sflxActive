@@ -147,6 +147,11 @@ module Pages
       end
     end
 
+    def selected_item?(item)
+      typeName = URI.escape item.name
+      @context.request.url =~ /#{typeName}/
+    end
+
 
   end
 end

@@ -1,18 +1,5 @@
 module ApplicationHelper
 
-  def menu_header
-    menu_items = Page.all.order(:position)
-        
-    presenter = Pages::MenuPresenter.new( menu_items, self)
-    presenter
-  end
-
-  def slideout_menu
-    menu_items = Page.all.order(:position)
-    
-    presenter = Pages::SlideoutMenuPresenter.new( menu_items, self)
-    presenter
-  end
 
   def render_menu_item_link(menu_item)
     link_tag_css = ""
@@ -35,6 +22,12 @@ module ApplicationHelper
     elsif menu_item.respond_to?(:link_url) && menu_item.link_url.present?
       path = menu_item.link_url
     end
+  end
+
+  private
+  
+  def menu_items
+    Page.all.order(:position)
   end
 
 

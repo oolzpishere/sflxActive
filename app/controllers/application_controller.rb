@@ -48,6 +48,7 @@ class ApplicationController < ActionController::Base
     @mypages = Page.all
   end
 
+
   def page_wrap_class
     controller = params[:controller]
     path = params[:path]

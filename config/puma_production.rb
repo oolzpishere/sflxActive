@@ -47,7 +47,8 @@ environment ENV.fetch("RAILS_ENV") { "production" }
 plugin :tmp_restart
 
 daemonize true
-basedir = '/var/www/rails/sflxActive'
+#p /var/www/rails/sflxActive
+basedir = File.expand_path("../../", __FILE__)
 
 # Store the pid of the server in the file at "path".
 #

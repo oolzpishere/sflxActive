@@ -1,5 +1,5 @@
 .row
-  %article.project-wrap.col.l8.offset-l1.m9
+  %article.project-wrap.col.l8.offset-l1.s12
     #project-header
       #project-basic-info-wrap
         .project-title
@@ -27,9 +27,7 @@
         = content_tag(:span, @gallery.title, class: "card-title")
 
         %ul.menu.nav
-          - @gallery_types.each do |type|
-            %li
-              = link_to type.name, galleries_path(:gallery_type => type.name) 
+          = Pages::GalleryTypesMenuPresenter.new( gallery_type_menus, self).to_html
 
       .card-action
         = content_tag(:span, "more", class: "card-title")
