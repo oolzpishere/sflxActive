@@ -35,7 +35,7 @@ module Pages
     self.list_tag_css = 'right hide-on-med-and-down'
     self.link_tag_css = 'waves-effect waves-light'
     self.link_dropdown_tag_css = 'header-dropdown-button waves-effect waves-light'
- 
+
 
     attr_accessor :context, :collection
     delegate :output_buffer, :output_buffer=, :to => :context
@@ -92,7 +92,7 @@ module Pages
       elsif menu_item.model_name.plural =~ /galleries/
         url_for controller: menu_item.model_name.plural, action: 'show', id: menu_item.id
       #elsif path =~ /find_us/
-        
+
       else
         #p for page find_us to reload all page
         turbolinks_boolean = path =~ /find_us/ ? false : true
@@ -147,10 +147,7 @@ module Pages
       end
     end
 
-    def selected_item?(item)
-      typeName = URI.escape item.name
-      @context.request.url =~ /#{typeName}/
-    end
+
 
 
   end

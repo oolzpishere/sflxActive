@@ -1,5 +1,5 @@
 .row
-  %section.col.l8.offset-l1.m9
+  %section.col.l8.offset-l1.s12
     - @galleries.each do |gallery| 
       .col.l4.s6
         .project-cover.hoverable
@@ -21,10 +21,8 @@
             /=raise "oooo"
 
 
-  %aside.col.l2.m3.s12
+  %aside.col.l2.m6.s10
     /%h2= t('.other')
     .card.hoverable.sidebar
       = Pages::GalleryTypesMenuPresenter.new( gallery_type_menus, self).to_html
       /- byebug
-
-

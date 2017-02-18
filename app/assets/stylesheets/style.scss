@@ -281,6 +281,27 @@ $slick-arrow-color: #000 !default;
 /* sidebar */
 .sidebar{
     background:black;
+    ul{
+	position:relative;
+	overflow:hidden; 
+    }
+    li{
+	line-height:4em;
+	width:100%;
+	padding-left:6em;
+	position:relative;
+    }
+    li.selected::before{
+	content:"";
+	position: absolute;
+	//float:left;
+	background:#fff;
+	height: 8em;
+	width: 8em;
+	top: -2em;
+	left: -4em;
+	transform: rotate(45deg);
+    }
 }
 
 //L sidebar second
