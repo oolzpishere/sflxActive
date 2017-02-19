@@ -78,7 +78,6 @@ ActiveAdmin.register Gallery do
 
 
     def update
-     byebug
       respond_to do |format|
         if @gallery.update(permitted_params[:gallery])
           if params[:images]
