@@ -280,27 +280,34 @@ $slick-arrow-color: #000 !default;
 
 /* sidebar */
 .sidebar{
-    background:black;
+    
     ul{
 	position:relative;
 	overflow:hidden; 
     }
     li{
-	line-height:4em;
 	width:100%;
-	padding-left:6em;
+	line-height:2em;
+	padding:0 2em;
 	position:relative;
+	text-align:center;
     }
     li.selected::before{
 	content:"";
-	position: absolute;
-	//float:left;
-	background:#fff;
-	height: 8em;
-	width: 8em;
-	top: -2em;
-	left: -4em;
+	height: 1em;
+	width: 1em;
+	position:absolute;
+	background:blue;
+	left:0;
+	left: -0.5em;
+	top: 0.5em;
 	transform: rotate(45deg);
+
+    }
+    li.selected::after{
+	@extend li.selected::before;
+	left:auto;
+	right: -0.5em;
     }
 }
 

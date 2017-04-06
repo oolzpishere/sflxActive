@@ -1,6 +1,11 @@
+require 'active_support/core_ext/string'
+require 'active_support/configurable'
+require 'action_view/helpers/tag_helper'
+require 'action_view/helpers/url_helper'
+require 'sflx/path'
 module Pages
   class SlideoutMenuPresenter < MenuPresenter
-
+    #include Sflx::Path
     self.menu_tag = :div
     self.list_tag = :ul
     self.list_item_tag = :li

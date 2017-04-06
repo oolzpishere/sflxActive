@@ -11,7 +11,7 @@
 
           %i.fa.fa-search.fa-lg.right.header-search-toggle{"aria-hidden" => "true"}
 
-          = Pages::SlideoutMenuPresenter.new( menu_items, self).to_html
+          -# = Pages::SlideoutMenuPresenter.new( menu_items, self).to_html
           = Pages::MenuPresenter.new( menu_items, self).to_html
 
 = render "/search" 

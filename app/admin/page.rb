@@ -1,4 +1,4 @@
-include Sflx::Path
+#include Sflx::Path
 ActiveAdmin.register Page do
  
 

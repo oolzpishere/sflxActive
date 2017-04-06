@@ -3,6 +3,7 @@ require 'active_support/core_ext/string'
 require 'active_support/configurable'
 require 'action_view/helpers/tag_helper'
 require 'action_view/helpers/url_helper'
+#require 'sflx/path'
 
 
 module Pages
@@ -80,13 +81,14 @@ module Pages
     end
 
     def check_for_dropdown_item(menu_item)
-      path = get_path menu_item 
+      path =  get_path menu_item 
       path =~ /^\/?galleries$|^\/?contact$/
     end
 
     def render_menu_item_link(menu_item)
       path = get_path menu_item
-      link_to(menu_item.title, path, :class => link_tag_css)
+      turbolinks_boolean = path =~ /find_us/ ? false : true
+      link_to(menu_item.title, path, :class => link_tag_css, "data-turbolinks" => turbolinks_boolean)
       # if path =~ /galleries/
       #   mcontroller = path.slice(/^\/?\w+/) # get 'galleries'
       #   link_to(menu_item.title, context.url_for(controller: mcontroller, action: 'index', query: menu_item.title ), :class => link_tag_css)

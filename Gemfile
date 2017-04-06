@@ -73,8 +73,8 @@ gem 'materialize-sass', '~> 0.97.7'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 
 gem 'rails-i18n'
-## for translate activeadmin datepicker I18n
-gem 'jquery-ui-rails'
+## for translate activeadmin datepicker I18n, have to 5.0, 6.0 change structure, can't find datapicker #active admin issues #3251
+gem 'jquery-ui-rails',       '~> 5.0'
 
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'

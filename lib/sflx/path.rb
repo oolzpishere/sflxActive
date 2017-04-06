@@ -4,11 +4,11 @@ module Sflx
     def get_path(menu_item)
       if depth0?(menu_item)
         menu_item.slug
-      elsif menu_item.parent_id == 3 && parent(menu_item).slug && menu_item.title
-        parent(menu_item).slug + "?" + menu_item.title
+      elsif menu_item.parent_id == 3 && mparent(menu_item).slug && menu_item.title
+        mparent(menu_item).slug + "?" + menu_item.title
         
-      elsif parent(menu_item)
-        parent(menu_item).slug + menu_item.slug
+      elsif mparent(menu_item)
+        mparent(menu_item).slug + menu_item.slug
       end
       # if menu_item.slug.present?
       #   path = menu_item.slug
@@ -17,7 +17,8 @@ module Sflx
       # end
     end
 
-    def parent(menu_item)
+    private
+    def mparent(menu_item)
       Page.find(menu_item.parent_id) if menu_item.parent_id.present?
     end
 
@@ -25,6 +26,6 @@ module Sflx
       menu_item.depth == 0
     end
 
-    
+
   end
 end
