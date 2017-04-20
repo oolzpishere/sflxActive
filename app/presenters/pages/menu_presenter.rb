@@ -88,6 +88,7 @@ module Pages
     def render_menu_item_link(menu_item)
       path = get_path menu_item
       turbolinks_boolean = path =~ /find_us/ ? false : true
+      # binding.pry
       link_to(menu_item.title, path, :class => link_tag_css, "data-turbolinks" => turbolinks_boolean)
       # if path =~ /galleries/
       #   mcontroller = path.slice(/^\/?\w+/) # get 'galleries'

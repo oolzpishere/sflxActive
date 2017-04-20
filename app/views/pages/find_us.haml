@@ -5,7 +5,8 @@
 
 
 %script{"data-turbolinks-track" => "reload", :src => "http://api.map.baidu.com/api?v=2.0&ak=htvwHrLbN3yVDwvAEooFgBRkbv1MgHfG", :type => "text/javascript"}
-/ 百度地图容器
+  
+// 百度地图容器
 #map.col-xs-10.col-xs-offset-1{:style => "height:550px;border:#ccc solid 1px;color: #000;font-size:12px"} 
 
 
@@ -29,7 +30,7 @@
       map.enableKeyboard();
       map.enableDragging();
       map.enableDoubleClickZoom()
-    }
+    }map
     function addClickHandler(target,window){
       target.addEventListener("click",function(){
         target.openInfoWindow(window);

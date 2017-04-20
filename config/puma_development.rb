@@ -9,11 +9,11 @@ threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests, default is 3000.
 #
-port        ENV.fetch("PORT") { 9292 }
+port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
-environment ENV.fetch("RAILS_ENV") { "production" }
+environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
@@ -52,7 +52,7 @@ basedir = File.expand_path("../../", __FILE__)
 
 # Store the pid of the server in the file at "path".
 #
-pidfile "/tmp/puma_production.pid"
+pidfile "/tmp/puma_development.pid"
 
 # Bind the server to "url". "tcp://", "unix://" and "ssl://" are the only
 # accepted protocols.
@@ -61,7 +61,7 @@ pidfile "/tmp/puma_production.pid"
 #
 # bind 'tcp://0.0.0.0:9292'
 # bind 'unix:///var/run/puma.sock'
-bind "unix:///tmp/puma_production.sock?umask=0111"
+
+
+bind "unix:///tmp/puma_development.sock?umask=0111"
 # bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
-
-

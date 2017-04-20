@@ -16,58 +16,17 @@ do
 	    USER="$2"
 	    shift
 	    ;;
-	-e|--environment)
-	    ENV="$2"
-	    shift
-	    ;;
-	-s|--system)
-	    SYS="$2"
-	    shift
-	    ;;
 	*)
 	    ;;
     esac
     shift
 done
 
-# default for production and prevent wrong type
-# if [ -z "$ENV" ]; then
-#     ENV_NAME="puma_production"
-#     USER=ubuntu
-# else
-#     ENV_NAME=puma_"$ENV"
-# fi
-
-case $ENV in
-    development)
-	ENV_NAME=puma_"$ENV"
-	;;
-    *)
-	ENV_NAME="puma_production"
-	;;
-esac
-
-case $USER in
-    leeli)
-    ;;
-    *)
-	USER=ubuntu
-	 ;;
-esac
-
-case $SYS in
-    mac)
-	ROOT=/Users/"$USER"/www/rails/sflxActive
-	;;
-    *)
-	ROOT=/var/www/rails/sflxActive	
-	;;
-esac
-
-
-PUMA_CONFIG_FILE="$ROOT"/config/"$ENV_NAME".rb
-PUMA_PID_FILE=/tmp/"$ENV_NAME".pid
-PUMA_SOCKET=/tmp/"$ENV_NAME".sock
+ROOT=/Users/"$USER"/www/rails/sflxActive
+PUMA_CONFIG_FILE="$ROOT"/config/puma_dev.rb
+PUMA_PID_FILE="$ROOT"/tmp/pids/puma_dev.pid
+PUMA_SOCKET="$ROOT"/tmp/sockets/puma_dev.sock
+# USER=leeli
 
 
 # check if puma process is running
