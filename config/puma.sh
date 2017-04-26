@@ -1,7 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 set -x
+
+#pp default: is ENV_NAME="puma_production", USER=ubuntu, ROOT=/var/www/rails/sflxActive
+#p usage: -u username -e environment_full_name -s (mac or ubuntu)
 
 # Simple move this file into your Rails `script` folder. Also make sure you `chmod +x puma.sh`.
 # Please modify the CONSTANT variables to fit your configurations.
@@ -40,10 +43,10 @@ done
 
 case $ENV in
     development)
-	ENV_NAME=puma_"$ENV"
+	ENV_NAME=puma_$ENV
 	;;
     *)
-	ENV_NAME="puma_production"
+	ENV_NAME=puma_production
 	;;
 esac
 
@@ -57,17 +60,19 @@ esac
 
 case $SYS in
     mac)
-	ROOT=/Users/"$USER"/www/rails/sflxActive
+	ROOT=/Users/$USER/www/rails/sflxActive
+	USER_DIR=Users
 	;;
     *)
-	ROOT=/var/www/rails/sflxActive	
+	ROOT=/home/$USER/www/rails/sflxActive
+	USER_DIR=home
 	;;
 esac
 
 
-PUMA_CONFIG_FILE="$ROOT"/config/"$ENV_NAME".rb
-PUMA_PID_FILE=/tmp/"$ENV_NAME".pid
-PUMA_SOCKET=/tmp/"$ENV_NAME".sock
+PUMA_CONFIG_FILE=$ROOT/config/$ENV_NAME.rb
+PUMA_PID_FILE=/tmp/$ENV_NAME.pid
+PUMA_SOCKET=/tmp/$ENV_NAME.sock
 
 
 # check if puma process is running
@@ -94,9 +99,10 @@ case "$1" in
 	echo "Starting puma..."
 	rm -f $PUMA_SOCKET
 	if [ -e $PUMA_CONFIG_FILE ] ; then
-	    su - "$USER" -c "source '/Users/"$USER"/.zshrc';cd "$ROOT" && bundle exec puma --config "$PUMA_CONFIG_FILE""
-	else
-	    bundle exec puma --daemon --bind unix://$PUMA_SOCKET --pidfile $PUMA_PID_FILE
+	    su $USER -c  "source /$USER_DIR/$USER/.zshrc; cd $ROOT && bundle exec puma --config $PUMA_CONFIG_FILE"
+	    # else
+	    
+	    # bundle exec puma --daemon --bind unix://$PUMA_SOCKET --pidfile $PUMA_PID_FILE
 	fi
 
 	echo "done"

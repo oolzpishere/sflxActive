@@ -1,0 +1,19 @@
+[Unit]
+Description=My App Puma Server
+# After=network.target
+
+Requires=puma.socket
+
+[Service]
+Environment=PUMA_DEBUG=1
+User=ubuntu
+WorkingDirectory=/home/ubuntu/www/rails/sflxActive
+# $1 /path/to/run-puma $2 path/to/app $3 config/file $4 log/file
+ExecStart=/home/ubuntu/www/rails/sflxActive/config/run-puma /home/ubuntu/www/rails/sflxActive /home/ubuntu/www/rails/sflxActive/config/puma_production.rb /home/ubuntu/www/rails/sflxActive/log/puma.log
+
+Restart=always
+# PIDFile=/tmp/puma_production.pid
+
+
+[Install]
+WantedBy=multi-user.target
