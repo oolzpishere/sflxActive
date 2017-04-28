@@ -83,3 +83,5 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
 gem 'jquery-fileupload-rails', '~> 0.4.7'
+
+gem 'pg'
