@@ -14,5 +14,6 @@ module SflxActive
     config.i18n.default_locale = 'zh-CN'
     
     config.autoload_paths  <<  "#{Rails.root}/lib"
+    
   end
 end
