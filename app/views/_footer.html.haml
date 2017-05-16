@@ -28,9 +28,9 @@
         %h5.white-text 联系我们
         .footer-content-item.social-icon-wrap.footer-logo-wrap
           - wechat_qr = image_tag("m/qrcode.jpg", size: "100")
-          = image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img",  id: "wechat-icon", class: "social-icon social-icon-img ", data: {:tooltip => "#{wechat_qr}"})
-          = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img social-icon-img"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes", class: "qq-icon social-icon", target: "_blank")
-          = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img social-icon-img"), "https://sflc.taobao.com/", class: "taobao-icon social-icon", target: "_blank")
+          = image_tag("m/圆角_Anna/64px/tencent -腾讯_wechat -微信.png", class: "responsive-img social-icon social-icon-img",  id: "wechat-icon", data: {:tooltip => "#{wechat_qr}"})
+          = link_to(image_tag("m/圆角_Anna/64px/tencent -腾讯_QQ.png", class: "responsive-img social-icon-img qq-icon social-icon"), "http://wpa.qq.com/msgrd?v=3&uin=877881120&site=qq&menu=yes",  target: "_blank")
+          = link_to(image_tag("m/圆角_Anna/64px/taobao -淘宝.png", class: "responsive-img social-icon-img taobao-icon social-icon"), "https://sflc.taobao.com/", target: "_blank")
         
       .col.l4.s12
         %h5.white-text 快速链接

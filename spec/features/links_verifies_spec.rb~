@@ -1,0 +1,18 @@
+require 'rails_helper'
+require 'pry'
+
+RSpec.feature "LinksVerifies", type: :feature do
+  pending "add some scenarios (or delete) #{__FILE__}"
+  # binding.pry
+  describe "links" do
+    # let(:page) { Page.first }
+    # binding.pry
+    it 'has no broken links' do
+      # get :index
+      visit '/'
+      # binding.pry
+      expect(page).to have_content 'Home' 
+    end
+  end
+  
+end

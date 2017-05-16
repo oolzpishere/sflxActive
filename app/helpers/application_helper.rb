@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-
+  
   def render_menu_item_link(menu_item)
     link_tag_css = ""
     path = get_path menu_item
@@ -17,15 +17,15 @@ module ApplicationHelper
   end
 
   def get_path(menu_item)
-    if menu_item.respond_to?(:slug) && menu_item.slug.present?
-      path = menu_item.slug
-    elsif menu_item.respond_to?(:link_url) && menu_item.link_url.present?
+
+    if menu_item.respond_to?(:link_url) && menu_item.link_url.present?
       path = menu_item.link_url
+    elsif menu_item.respond_to?(:slug) && menu_item.slug.present?
+      path = menu_item.slug
     end
   end
 
-  private
-  
+    
   def menu_items
     Page.all.order(:position)
   end

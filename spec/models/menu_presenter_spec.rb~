@@ -1,0 +1,12 @@
+require 'rails_helper'
+
+RSpec.describe "Links" do
+  describe "test all links" do
+    it "works! (now write some real specs)" do
+      binding.pry
+      menus = Pages::MenuPresenter.new( menu_items, self).to_html
+
+      expect(menus).to have_http_status(200)
+    end
+  end
+end
