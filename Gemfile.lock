@@ -10,6 +10,14 @@ GIT
       request_store (~> 1.0)
 
 GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: 9e30da0914f19b783ea913524b9c07ca122ee6d9
+  specs:
+    ckeditor (4.2.3)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/josevalim/inherited_resources.git
   revision: 615b0d5c37a4bfc86ad18ec22b90d161fd996130
   specs:
@@ -115,9 +123,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    ckeditor (4.2.2)
-      cocaine
-      orm_adapter (~> 0.5.0)
     climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -383,7 +388,7 @@ DEPENDENCIES
   cancan
   capistrano
   capybara
-  ckeditor
+  ckeditor!
   coffee-rails (~> 4.2)
   devise
   devise-i18n

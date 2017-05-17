@@ -78,7 +78,7 @@ gem 'haml'
 gem 'yaml_db'
 gem 'paperclip', '~> 5.1'
 # gem 'jquery-fileupload-rails', '~> 0.4.7'
-gem 'ckeditor'
+gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor.git'
 
 gem 'jquery-slick-rails', '~> 1.6', '>= 1.6.0.2'
 gem 'materialize-sass', '~> 0.97.7'
