@@ -33,17 +33,17 @@ ActiveAdmin.register Gallery do
       f.input :body, :as => :ckeditor, input_html: { ckeditor: { height: 400 } }
       f.input :side_body
       f.input :gallery_types, :as => :check_boxes
-      byebug
+
       f.input :types, :as => :check_boxes, :collection => ["VI设计", "包装设计", "标志设计", "画册设计", "网装设计"]
       f.input :cover, :as => :file, :hint => f.object.cover.present? ? image_tag(f.object.cover.url(:thumb)) : content_tag(:span, "no image yet")
       input :images, :as => :file, input_html: { multiple: true, name: "images[]"}
-      
+
       #f.has_many :images, sortable: :position, allow_destroy: true, heading: 'images'  do |i|
       f.has_many :images, sortable: :position, allow_destroy: true, heading: 'images'  do |i|
         i.input :image, :as => :file, :hint => i.object.image.present? ? image_tag(i.object.image.url(:thumb)) : content_tag(:span, "no image yet")
       end
       #,input_html: { multiple: true}
-      # f.input :image_cache, :as => :hidden 
+      # f.input :image_cache, :as => :hidden
       f.input :position
     end
     # f.inputs "Image", :for => [:image, f.object.images || Image.new ] do |fi|
@@ -100,11 +100,11 @@ ActiveAdmin.register Gallery do
     def set_gallery
       @gallery = Gallery.find(params[:id])
     end
-    
+
   end
 
 
-  
+
   permit_params do
     permitted = [:title, :body, :side_body, :position, :cover, types: [], :gallery_type_ids => [], images_attributes: [:id, :position, :gallery_id, :_destroy, :image, image: [] ]]
     permitted

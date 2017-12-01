@@ -15,9 +15,19 @@ class PagesController < InheritedResources::Base
     end
   end
 
+  def create
+    form = params.fetch(:form)
+    form_name = params.fetch(:form_name)
+    entry = digest_params(params.fetch(:entry))
+    hash ={form: form,form_name: form_name,entry: entry}
+
+    IO.write('test_ps',hash)
+    render status: 200, json: ''
+  end
+
   def show
     @page
-   
+
     if params[:path] == "contact"
       render "contact" and return
     elsif  params[:path] == "contact/find_us"
@@ -27,7 +37,7 @@ class PagesController < InheritedResources::Base
     elsif params[:path] == "about"
       render "about" and return
     end
-    
+
   end
 
 
@@ -50,10 +60,10 @@ class PagesController < InheritedResources::Base
   end
 
   def check_signature(signature, timestamp, nonce)
-    
+
     token = "qhnDxVIxeS28h9mxSsJbyliZyFGUZHnb"
     tmpArr = Array.new.push(token, timestamp, nonce)
-   
+
     tmpStr = tmpArr.sort.join
     tmpStr = Digest::SHA1.hexdigest tmpStr
 
@@ -65,7 +75,13 @@ class PagesController < InheritedResources::Base
   end
 
   def page_params
-    params.require(:page).permit()
+    params.fetch(:page).permit()
+  end
+  # ActionController::Parameters object convert to hash
+  def digest_params(params)
+    buf_h = {}
+    # ActionController::Parameters
+    params.each {|k,v| buf_h[k] = v}
+    buf_h
   end
 end
-

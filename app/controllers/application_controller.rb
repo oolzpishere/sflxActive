@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
   # before_action :set_locale
 
   before_action :find_all_pages
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     # else
     #   url_for controller: page.model_name.plural, action: 'show', id: page.id
     # end
-    #ApplicationHelper.render_menu_item_link menu_item 
+    #ApplicationHelper.render_menu_item_link menu_item
   end
 
   def access_denied(exception)
@@ -59,5 +59,5 @@ class ApplicationController < ActionController::Base
       "#{controller}-#{id}"
     end
   end
-  
+
 end

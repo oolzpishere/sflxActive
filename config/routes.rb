@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  post '/pages', to: 'pages#create'
   get '/searches', to: 'searches#index'
 
 
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 #  get 'contact', to: 'pages#contact'
   get '/pages/:id', to: 'pages#show', as: 'page'
   get '/gallery_types/:id', to: 'gallery_types#show', as: 'gallery_type'
-  
+
 
   # resources :pages
   mount Ckeditor::Engine => '/ckeditor'
